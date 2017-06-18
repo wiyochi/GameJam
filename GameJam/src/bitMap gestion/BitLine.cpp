@@ -22,7 +22,7 @@ void BitLine::update()
 {
 	for (int i = 0; i < rectArray.size(); i++)
 	{
-		rectArray[i].move()
+		//rectArray[i].move()
 	}
 }
 
