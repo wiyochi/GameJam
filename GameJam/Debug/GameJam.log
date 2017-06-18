@@ -1,4 +1,7 @@
-﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(373,5): warning MSB8004: Le répertoire Output ne se termine pas par une barre oblique finale. Cette instance de build ajoutera une barre oblique, comme requis, pour permettre l'évaluation correcte du répertoire Output.
-  main.cpp
+﻿  main.cpp
+  BitLine.cpp
+d:\dossier\documents2\dev\!gamejam2\gamejam\gamejam\src\bitmap gestion\bitline.cpp(11): warning C4244: 'argument' : conversion de 'unsigned int' en 'float', perte possible de données
+d:\dossier\documents2\dev\!gamejam2\gamejam\gamejam\src\bitmap gestion\bitline.cpp(14): warning C4244: 'argument' : conversion de 'unsigned int' en 'float', perte possible de données
+  Génération de code en cours...
   GameJam.vcxproj -> D:\dossier\Documents2\Dev\!GAMEJAM2\GameJam\GameJam\bin\Win32\Debug\GameJam.exe
   GameJam.vcxproj -> D:\dossier\Documents2\Dev\!GAMEJAM2\GameJam\GameJam\bin\Win32\Debug\GameJam.pdb (Partial PDB)

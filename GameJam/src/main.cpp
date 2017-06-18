@@ -1,10 +1,11 @@
 #include <SFML\Graphics.hpp>
+#include "bitMap gestion\BitLine.h"
 
 int main()
 {
-	sf::RenderWindow window(sf::VideoMode(200, 200), "SFML works!");
-	sf::CircleShape shape(100.f);
-	shape.setFillColor(sf::Color::Green);
+	sf::RenderWindow window(sf::VideoMode(700, 700), "SFML works!");
+	BitLine lineTest(&window, 50.f, 0.2f, 1, "ressources\\bitMap\\bitmap.txt");
+	lineTest.newBlock("a");
 
 	while (window.isOpen())
 	{
@@ -15,8 +16,12 @@ int main()
 				window.close();
 		}
 
+		lineTest.update();
+
 		window.clear();
-		window.draw(shape);
+
+		lineTest.draw();
+
 		window.display();
 	}
 
