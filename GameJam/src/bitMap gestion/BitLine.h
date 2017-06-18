@@ -2,19 +2,28 @@
 #include <SFML\Graphics.hpp>
 #include <string>
 #include <vector>
+#include <iostream>
+#include <fstream>
 
 using namespace std;
 
 class BitLine
 {
 public:
-	BitLine();
+	BitLine(sf::RenderWindow* win, float x, float speed, int num, ifstream* f);
 	~BitLine();
 	void newBlock(string touche);
+	void update();
+	void draw();
 private:
 	int m_num;
-	float m_y;
+	ifstream* m_file;
+	float m_x;
+	float m_speed;
 	sf::RenderWindow* window;
-	vector <
+	vector <int> yPosArray;
+	vector <sf::RectangleShape> rectArray;
+	sf::RectangleShape drawableLine1;
+	sf::RectangleShape drawableLine2;
 };
 
