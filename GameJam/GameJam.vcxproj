@@ -143,10 +143,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\bitMap gestion\BitLine.cpp" />
+    <ClCompile Include="src\HUD\HudInGame.cpp" />
     <ClCompile Include="src\main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\bitMap gestion\BitLine.h" />
+    <ClInclude Include="src\HUD\HudInGame.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
