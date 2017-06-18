@@ -1,12 +1,12 @@
 #include "BitLine.h"
 
-BitLine::BitLine(sf::RenderWindow* win, float x, float speed, int num, string filePath)
+BitLine::BitLine(sf::RenderWindow* win, float x, float speed, int num, ifstream* f)
 {
 	window = win;
 	m_x = x;
 	m_speed = speed;
 	m_num = num;
-	m_filePath = filePath;
+	m_file = f;
 	drawableLine1.setPosition(sf::Vector2f(m_x, 0));
 	drawableLine1.setSize(sf::Vector2f(1, window->getSize().y));
 	drawableLine1.setFillColor(sf::Color::White);

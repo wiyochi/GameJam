@@ -3,20 +3,21 @@
 #include <string>
 #include <vector>
 #include <iostream>
+#include <fstream>
 
 using namespace std;
 
 class BitLine
 {
 public:
-	BitLine(sf::RenderWindow* win, float x, float speed, int num, string filePath);
+	BitLine(sf::RenderWindow* win, float x, float speed, int num, ifstream* f);
 	~BitLine();
 	void newBlock(string touche);
 	void update();
 	void draw();
 private:
 	int m_num;
-	string m_filePath;
+	ifstream* m_file;
 	float m_x;
 	float m_speed;
 	sf::RenderWindow* window;
