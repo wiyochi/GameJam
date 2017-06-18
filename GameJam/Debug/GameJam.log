@@ -1,5 +1,5 @@
-﻿  main.cpp
-  Writer.cpp
-  Génération de code en cours...
+﻿  BitLine.cpp
+d:\dossier\documents2\dev\!gamejam2\gamejam\gamejam\src\bitmap gestion\bitline.cpp(17): warning C4244: 'argument' : conversion de 'unsigned int' en 'float', perte possible de données
+d:\dossier\documents2\dev\!gamejam2\gamejam\gamejam\src\bitmap gestion\bitline.cpp(20): warning C4244: 'argument' : conversion de 'unsigned int' en 'float', perte possible de données
   GameJam.vcxproj -> D:\dossier\Documents2\Dev\!GAMEJAM2\GameJam\GameJam\bin\Win32\Debug\GameJam.exe
   GameJam.vcxproj -> D:\dossier\Documents2\Dev\!GAMEJAM2\GameJam\GameJam\bin\Win32\Debug\GameJam.pdb (Partial PDB)

@@ -4,16 +4,16 @@
 
 int main()
 {
-	sf::RenderWindow window(sf::VideoMode(700, 700), "SFML works!");
+	sf::RenderWindow window(sf::VideoMode(700, 700), "SFML works bite!");
+	window.setFramerateLimit(500);
 
 	ifstream fileI("ressources\\bitMap\\bitmap.txt");
 
-	BitLine lineTest(&window, 50.f, 0.2f, 1, &fileI);
-	lineTest.newBlock("a");
+	BitLine lineTest(&window, 50.f, 0.8f, 1, &fileI);
 
-	ofstream fileO("ressources\\bitMap\\bitmap.txt");
+	//ofstream fileO("ressources\\bitMap\\bitmap.txt");
 
-	Writer testWrite(&fileO);
+	//Writer testWrite(&fileO);
 
 	while (window.isOpen())
 	{
@@ -24,14 +24,14 @@ int main()
 				window.close();
 		}
 
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
-			testWrite.nextIs();
+		//if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
+		//	testWrite.nextIs();
 
 		lineTest.update();
 
 		window.clear();
 
-		testWrite.write();
+		//testWrite.write();
 		lineTest.draw();
 
 		window.display();

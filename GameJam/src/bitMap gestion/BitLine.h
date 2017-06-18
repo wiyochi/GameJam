@@ -18,8 +18,10 @@ public:
 private:
 	int m_num;
 	ifstream* m_file;
+	int m_compteur;
 	float m_x;
 	float m_speed;
+	bool endLine;
 	sf::RenderWindow* window;
 	vector <int> yPosArray;
 	vector <sf::RectangleShape> rectArray;

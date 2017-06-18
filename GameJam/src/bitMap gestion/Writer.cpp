@@ -5,7 +5,7 @@ Writer::Writer(ofstream* file)
 	m_next = false;
 	m_compteur = 0;
 	m_file = file;
-	*m_file << "L:";
+	//*m_file << "L:";
 }
 
 
