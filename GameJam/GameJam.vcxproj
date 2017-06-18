@@ -142,12 +142,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\menu\Bouton.cpp" />
     <ClCompile Include="src\bitMap gestion\BitLine.cpp" />
     <ClCompile Include="src\HUD\HudInGame.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\bitMap gestion\Writer.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\menu\Bouton.h" />
     <ClInclude Include="src\bitMap gestion\BitLine.h" />
     <ClInclude Include="src\HUD\HudInGame.h" />
     <ClInclude Include="src\bitMap gestion\Writer.h" />

@@ -4,7 +4,18 @@
 
 int main()
 {
-	sf::RenderWindow window(sf::VideoMode(700, 700), "SFML works!");
+	sf::RenderWindow window(sf::VideoMode(1920, 1080), "SFML works bite!");
+	window.setFramerateLimit(500);
+
+	sf::Texture background;
+	if(background.loadFromFile("ressources\\HUD\\gameJam-background.jpg", sf::IntRect(0, 0, 1920, 1080)))
+		cout << "yolo" << endl;
+
+	background.setSmooth(true);
+	sf::Sprite spriteBg;
+	spriteBg.setTexture(background);
+	spriteBg.setScale({ 1, 1 });
+	
 
 	ifstream fileI("ressources\\bitMap\\bitmap.txt");
 
@@ -30,8 +41,10 @@ int main()
 		lineTest.update();
 
 		window.clear();
+		// ici on fous les draws !
 
 		testWrite.write();
+		window.draw(spriteBg);
 		lineTest.draw();
 
 		window.display();
