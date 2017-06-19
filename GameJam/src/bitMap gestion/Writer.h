@@ -10,8 +10,11 @@ public:
 	~Writer();
 	void nextIs();
 	void write();
+	bool isReleasedState() const;
+	void reset();
 private:
 	bool m_next;
+	bool m_isReleased;
 	int m_compteur;
 	ofstream* m_file;
 };
