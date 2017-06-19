@@ -22,9 +22,14 @@ int main()
 		{
 			if (event.type == sf::Event::Closed)
 				window.close();
+			if (event.type == sf::Event::KeyReleased)
+			{
+				//if (event.key.code == sf::Keyboard::Space)
+				//	testWrite.reset();
+			}
 		}
 
-		//if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
+		//if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space) && testWrite.isReleasedState())
 		//	testWrite.nextIs();
 
 		lineTest.update();
