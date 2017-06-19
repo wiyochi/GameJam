@@ -23,11 +23,15 @@ public:
 		LettreV,
 		LettreZ,
 	} type;
-	BitLine(sf::RenderWindow* win, float x, float speed, type t);
+	BitLine(sf::RenderWindow* win, float speed, type t);
 	~BitLine();
 	void newBlock();
 	void update();
 	void draw();
+	void drawBg();
+	bool isHidden() const;
+	void show();
+	void hide();
 private:
 	type m_type;
 	ifstream* m_file;
@@ -35,13 +39,18 @@ private:
 	float m_x;
 	float m_speed;
 	bool endLine;
+	bool m_hidden;
 	sf::RenderWindow* window;
 	vector <int> yPosArray;
 	vector <sf::RectangleShape> rectArray;
 	vector <int> indexErase;
-	sf::RectangleShape drawableLine1;
-	sf::RectangleShape drawableLine2;
 	sf::Texture m_texture;
 	sf::Sprite m_sprite;
+	sf::Texture m_blockTexture;
+	vector <sf::Sprite> blockArray;
+
+	sf::RectangleShape hitRect;
+	float hitY;
+	float hitHeight;
 };
 
