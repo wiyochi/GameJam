@@ -4,12 +4,20 @@
 
 int main()
 {
-	sf::RenderWindow window(sf::VideoMode(700, 700), "SFML works bite!");
+	sf::RenderWindow window(sf::VideoMode(1920, 1080), "SFML works bite!");
 	window.setFramerateLimit(500);
+	window.setPosition(sf::Vector2i(950, 0));
 
-	ifstream fileI("ressources\\bitMap\\bitmap.txt");
-
-	BitLine lineTest(&window, 50.f, 0.8f, 1, &fileI);
+	BitLine lineB(&window, 50.f, 0.8f, BitLine::LettreB);
+	BitLine lineE(&window, 50.f, 0.8f, BitLine::LettreE);
+	BitLine lineF(&window, 50.f, 0.8f, BitLine::LettreF);
+	BitLine lineH(&window, 50.f, 0.8f, BitLine::LettreH);
+	BitLine lineI(&window, 50.f, 0.8f, BitLine::LettreI);
+	BitLine lineL(&window, 50.f, 0.8f, BitLine::LettreL);
+	BitLine lineQ(&window, 50.f, 0.8f, BitLine::LettreQ);
+	BitLine lineU(&window, 50.f, 0.8f, BitLine::LettreU);
+	BitLine lineV(&window, 50.f, 0.8f, BitLine::LettreV);
+	BitLine lineZ(&window, 50.f, 0.8f, BitLine::LettreZ);
 
 	//ofstream fileO("ressources\\bitMap\\bitmap.txt");
 
@@ -32,12 +40,30 @@ int main()
 		//if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space) && testWrite.isReleasedState())
 		//	testWrite.nextIs();
 
-		lineTest.update();
+		lineB.update();
+		lineE.update();
+		lineF.update();
+		lineH.update();
+		lineI.update();
+		lineL.update();
+		lineQ.update();
+		lineU.update();
+		lineV.update();
+		lineZ.update();
 
 		window.clear();
 
 		//testWrite.write();
-		lineTest.draw();
+		lineB.draw();
+		lineE.draw();
+		lineF.draw();
+		lineH.draw();
+		lineI.draw();
+		lineL.draw();
+		lineQ.draw();
+		lineU.draw();
+		lineV.draw();
+		lineZ.draw();
 
 		window.display();
 	}

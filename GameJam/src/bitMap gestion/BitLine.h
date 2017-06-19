@@ -10,13 +10,26 @@ using namespace std;
 class BitLine
 {
 public:
-	BitLine(sf::RenderWindow* win, float x, float speed, int num, ifstream* f);
+	typedef enum
+	{
+		LettreB,
+		LettreE,
+		LettreF,
+		LettreH,
+		LettreI,
+		LettreL,
+		LettreQ,
+		LettreU,
+		LettreV,
+		LettreZ,
+	} type;
+	BitLine(sf::RenderWindow* win, float x, float speed, type t);
 	~BitLine();
-	void newBlock(string touche);
+	void newBlock();
 	void update();
 	void draw();
 private:
-	int m_num;
+	type m_type;
 	ifstream* m_file;
 	int m_compteur;
 	float m_x;
@@ -25,7 +38,10 @@ private:
 	sf::RenderWindow* window;
 	vector <int> yPosArray;
 	vector <sf::RectangleShape> rectArray;
+	vector <int> indexErase;
 	sf::RectangleShape drawableLine1;
 	sf::RectangleShape drawableLine2;
+	sf::Texture m_texture;
+	sf::Sprite m_sprite;
 };
 
