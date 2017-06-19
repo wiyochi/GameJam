@@ -1,6 +1,7 @@
 #include <SFML\Graphics.hpp>
 #include "bitMap gestion\BitLine.h"
 #include "bitMap gestion\Writer.h"
+#include "menu/Bouton.h"
 
 int main()
 {
@@ -16,6 +17,8 @@ int main()
 	spriteBg.setTexture(background);
 	spriteBg.setScale({ 1, 1 });
 	
+	Bouton play(760, 400, 100, 400,"play", &window);
+	Bouton quit(760, 600, 100, 400,"quit", &window);
 
 	ifstream fileI("ressources\\bitMap\\bitmap.txt");
 
@@ -46,7 +49,8 @@ int main()
 		testWrite.write();
 		window.draw(spriteBg);
 		lineTest.draw();
-
+		play.draw();
+		quit.draw();
 		window.display();
 	}
 
