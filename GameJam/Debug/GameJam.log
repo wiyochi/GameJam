@@ -1,3 +1,9 @@
 ﻿  main.cpp
+  BitLine.cpp
+d:\dossier\documents2\dev\!gamejam2\gamejam\gamejam\src\bitmap gestion\bitline.cpp(17): warning C4244: 'argument' : conversion de 'unsigned int' en 'float', perte possible de données
+d:\dossier\documents2\dev\!gamejam2\gamejam\gamejam\src\bitmap gestion\bitline.cpp(20): warning C4244: 'argument' : conversion de 'unsigned int' en 'float', perte possible de données
+  HudInGame.cpp
+  Génération de code en cours...
+  LINK : D:\dossier\Documents2\Dev\!GAMEJAM2\GameJam\GameJam\bin\Win32\Debug\GameJam.exe introuvable ou non généré par la dernière édition de liens incrémentielle ; édition de liens complète en cours
   GameJam.vcxproj -> D:\dossier\Documents2\Dev\!GAMEJAM2\GameJam\GameJam\bin\Win32\Debug\GameJam.exe
   GameJam.vcxproj -> D:\dossier\Documents2\Dev\!GAMEJAM2\GameJam\GameJam\bin\Win32\Debug\GameJam.pdb (Partial PDB)
