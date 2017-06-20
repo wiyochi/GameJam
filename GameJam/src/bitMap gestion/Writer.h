@@ -12,6 +12,7 @@ public:
 	void write();
 	bool isReleasedState() const;
 	void reset();
+	void end();
 private:
 	bool m_next;
 	bool m_isReleased;

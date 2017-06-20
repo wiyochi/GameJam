@@ -4,6 +4,7 @@
 #include <vector>
 #include <iostream>
 #include <fstream>
+#include "..\HUD\HudInGame.h"
 
 using namespace std;
 
@@ -23,7 +24,7 @@ public:
 		LettreV,
 		LettreZ,
 	} type;
-	BitLine(sf::RenderWindow* win, float speed, type t);
+	BitLine(sf::RenderWindow* win, float speed, type t, HudInGame* h);
 	~BitLine();
 	void newBlock();
 	void update();
@@ -33,6 +34,7 @@ public:
 	void show();
 	void hide();
 private:
+	HudInGame* hud;
 	type m_type;
 	ifstream* m_file;
 	int m_compteur;

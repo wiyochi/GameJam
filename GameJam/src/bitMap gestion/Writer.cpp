@@ -44,3 +44,8 @@ void Writer::reset()
 {
 	m_isReleased = true;
 }
+
+void Writer::end()
+{
+	*m_file << ";";
+}

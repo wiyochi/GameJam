@@ -11,28 +11,36 @@ HudInGame::HudInGame( string title, sf::RenderWindow* window)
 	ifLimitScaleScore = false;
 	limitScaleFever = m_textFever.getScale();
 	limitScaleScore = m_textFever.getScale();
+
 	m_font.loadFromFile("ressources\\HUD\\Bauhaus-93_6274.ttf");
 	m_textTitle.setFont(m_font);
 	m_textTitle.setString(m_title);
-	m_textTitle.setCharacterSize(50);
+	m_textTitle.setCharacterSize(70);
 	m_textTitle.setFillColor(sf::Color::White);
-	m_textTitle.setPosition(sf::Vector2f(100, 50));
+	m_textTitle.setPosition(sf::Vector2f(170, 50));
+
 	m_textFever.setFont(m_font);
 	m_textFever.setString(m_extremFever);
 	m_textFever.setCharacterSize(30);
 	m_textFever.setFillColor(sf::Color(142,14,0,255));
 	m_textFever.setPosition(1600, 900);
 	m_textFever.setScale(1, 1);
+
 	m_textScore.setFont(m_font);
 	m_textScore.setString(to_string(m_score));
-	m_textScore.setCharacterSize(50);
+	m_textScore.setCharacterSize(70);
 	m_textScore.setFillColor(sf::Color::White);
-	m_textScore.setPosition(sf::Vector2f(1600, 50));
+	m_textScore.setPosition(sf::Vector2f(1750, 235));
 	m_textScore.setScale(1, 1);
-	m_originTextExtremFever = m_textFever.getOrigin();
-	m_textFever.setOrigin(sf::Vector2f(m_originTextExtremFever.x + 105, m_originTextExtremFever.y+1));
 
-	
+	m_originTextExtremFever = m_textFever.getOrigin();
+	m_textFever.setOrigin(sf::Vector2f(m_originTextExtremFever.x + 105, m_originTextExtremFever.y+20));
+
+	bgTexture.loadFromFile("ressources\\HUD\\gameJam-background.jpg");
+	bgTexture.setSmooth(true);
+
+	bg.setTexture(bgTexture);
+	bg.setPosition({ 0, 0 });
 }
 
 HudInGame::~HudInGame()
@@ -41,8 +49,8 @@ HudInGame::~HudInGame()
 
 void HudInGame::draw()
 {
+	m_window->draw(bg);
 	m_window->draw(m_textTitle);
-	
 	m_window->draw(m_textScore);
 }
 
@@ -68,33 +76,38 @@ void HudInGame::extremFeverUptade()
 	{
 		ifLimitScaleFever = false;
 	}
-	m_textFever.rotate(7);
+	m_textFever.rotate(2);
 }
 
 void HudInGame::extremFeverDraw()
 {
-	m_window->draw(m_textFever);
+	if (m_score > 10)
+		m_window->draw(m_textFever);
 }
 
 void HudInGame::scoreUptade()
 {
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::F) && isKeyPressed == false)
-	{
-		m_score = m_score + 10;
-		m_textScore.setString(to_string(m_score));
-		
-		isKeyPressed = true;
-		animationScore = true;
-		
-	}
-	
-	
 	if (animationScore)
 	{
 		animationScoreUptade();
 	}
+}
 
-	
+void HudInGame::raiseScore()
+{
+	if (!isKeyPressed)
+	{
+		m_score = m_score + 10;
+		m_textScore.setString(to_string(m_score));
+		isKeyPressed = true;
+		animationScore = true;
+	}
+}
+
+void HudInGame::resetScore()
+{
+	m_score = 0;
+	animationScore = true;
 }
 
 void HudInGame::keyReleased()

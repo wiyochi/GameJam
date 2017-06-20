@@ -1,33 +1,34 @@
 #include <SFML\Graphics.hpp>
+#include <SFML\Audio.hpp>
 #include "bitMap gestion\BitLine.h"
 #include "bitMap gestion\Writer.h"
+#include "HUD\HudInGame.h"
 
 int main()
 {
-	const float speed = 1.5f;
+	const float speed = 1.7f;
 
 	sf::RenderWindow window(sf::VideoMode(1920, 1080), "SFML works bite!");
 	window.setFramerateLimit(500);
 	window.setPosition(sf::Vector2i(1000, 0));
 
-	sf::Texture bgTexture;
-	bgTexture.loadFromFile("ressources\\HUD\\gameJam-background.jpg");
-	bgTexture.setSmooth(true);
+	sf::Music espera;
+	espera.openFromFile("ressources\\music\\EMROD - Espera.wav");
+	espera.play();
+	espera.setVolume(50);
 
-	sf::Sprite bg;
-	bg.setTexture(bgTexture);
-	bg.setPosition({ 0, 0 });
+	HudInGame hud("EMROD - Espera", &window);
 
-	BitLine lineB(&window, speed, BitLine::LettreB);
-	BitLine lineE(&window, speed, BitLine::LettreE);
-	BitLine lineF(&window, speed, BitLine::LettreF);
-	BitLine lineH(&window, speed, BitLine::LettreH);
-	BitLine lineI(&window, speed, BitLine::LettreI);
-	BitLine lineL(&window, speed, BitLine::LettreL);
-	BitLine lineQ(&window, speed, BitLine::LettreQ);
-	BitLine lineU(&window, speed, BitLine::LettreU);
-	BitLine lineV(&window, speed, BitLine::LettreV);
-	BitLine lineZ(&window, speed, BitLine::LettreZ);
+	BitLine lineB(&window, speed, BitLine::LettreQ, &hud);
+	BitLine lineH(&window, speed, BitLine::LettreZ, &hud);
+	BitLine lineE(&window, speed, BitLine::LettreE, &hud);
+	BitLine lineF(&window, speed, BitLine::LettreF, &hud);
+	BitLine lineI(&window, speed, BitLine::LettreV, &hud);
+	BitLine lineL(&window, speed, BitLine::LettreB, &hud);
+	BitLine lineQ(&window, speed, BitLine::LettreH, &hud);
+	BitLine lineU(&window, speed, BitLine::LettreU, &hud);
+	BitLine lineV(&window, speed, BitLine::LettreI, &hud);
+	BitLine lineZ(&window, speed, BitLine::LettreL, &hud);
 	
 	//lineE.hide();
 	//lineF.hide();
@@ -39,9 +40,27 @@ int main()
 	//lineV.hide();
 	//lineZ.hide();
 
-	//ofstream fileO("ressources\\bitMap\\bitmap.txt");
+	//ofstream fileQ("ressources\\bitMap\\bitmapQ.txt");
+	//ofstream fileZ("ressources\\bitMap\\bitmapZ.txt");
+	//ofstream fileE("ressources\\bitMap\\bitmapE.txt");
+	//ofstream fileF("ressources\\bitMap\\bitmapF.txt");
+	//ofstream fileV("ressources\\bitMap\\bitmapV.txt");
+	//ofstream fileB("ressources\\bitMap\\bitmapB.txt");
+	//ofstream fileH("ressources\\bitMap\\bitmapH.txt");
+	//ofstream fileU("ressources\\bitMap\\bitmapU.txt");
+	//ofstream fileI("ressources\\bitMap\\bitmapI.txt");
+	//ofstream fileL("ressources\\bitMap\\bitmapL.txt");
 
-	//Writer testWrite(&fileO);
+	//Writer writeQ(&fileQ);
+	//Writer writeZ(&fileZ);
+	//Writer writeE(&fileE);
+	//Writer writeF(&fileF);
+	//Writer writeV(&fileV);
+	//Writer writeB(&fileB);
+	//Writer writeH(&fileH);
+	//Writer writeU(&fileU);
+	//Writer writeI(&fileI);
+	//Writer writeL(&fileL);
 
 	while (window.isOpen())
 	{
@@ -50,38 +69,62 @@ int main()
 		{
 			if (event.type == sf::Event::Closed)
 				window.close();
+			//Reset des writer (a supprimer)
 			if (event.type == sf::Event::KeyReleased)
 			{
-				//if (event.key.code == sf::Keyboard::Space)
-				//	testWrite.reset();
+				//if (event.key.code == sf::Keyboard::Q)
+				//	writeQ.reset();
+				//if (event.key.code == sf::Keyboard::Z)
+				//	writeZ.reset();
+				//if (event.key.code == sf::Keyboard::E)
+				//	writeE.reset();
+				//if (event.key.code == sf::Keyboard::F)
+				//	writeF.reset();
+				//if (event.key.code == sf::Keyboard::V)
+				//	writeV.reset();
+				//if (event.key.code == sf::Keyboard::B)
+				//	writeB.reset();
+				//if (event.key.code == sf::Keyboard::H)
+				//	writeH.reset();
+				//if (event.key.code == sf::Keyboard::U)
+				//	writeU.reset();
+				//if (event.key.code == sf::Keyboard::I)
+				//	writeI.reset();
+				//if (event.key.code == sf::Keyboard::L)
+				//	writeL.reset();
 			}
 		}
 
-		//if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space) && testWrite.isReleasedState())
-		//	testWrite.nextIs();
-		//if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
+		//Writer update (a supprimer)
+		//if (sf::Keyboard::isKeyPressed(sf::Keyboard::Q) && writeQ.isReleasedState())
+		//	writeQ.nextIs();
+		//if (sf::Keyboard::isKeyPressed(sf::Keyboard::Z) && writeZ.isReleasedState())
+		//	writeZ.nextIs();
+		//if (sf::Keyboard::isKeyPressed(sf::Keyboard::E) && writeE.isReleasedState())
+		//	writeE.nextIs();
+		//if (sf::Keyboard::isKeyPressed(sf::Keyboard::F) && writeF.isReleasedState())
+		//	writeF.nextIs();
+		//if (sf::Keyboard::isKeyPressed(sf::Keyboard::V) && writeV.isReleasedState())
+		//	writeV.nextIs();
+		//if (sf::Keyboard::isKeyPressed(sf::Keyboard::B) && writeB.isReleasedState())
+		//	writeB.nextIs();
+		//if (sf::Keyboard::isKeyPressed(sf::Keyboard::H) && writeH.isReleasedState())
+		//	writeH.nextIs();
+		//if (sf::Keyboard::isKeyPressed(sf::Keyboard::U) && writeU.isReleasedState())
+		//	writeU.nextIs();
+		//if (sf::Keyboard::isKeyPressed(sf::Keyboard::I) && writeI.isReleasedState())
+		//	writeI.nextIs();
+		//if (sf::Keyboard::isKeyPressed(sf::Keyboard::L) && writeL.isReleasedState())
+		//	writeL.nextIs();
 
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Q))
-			lineQ.keyPressed();
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Z))
-			lineZ.keyPressed();
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::E))
-			lineE.keyPressed();
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::F))
-			lineF.keyPressed();
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::V))
-			lineV.keyPressed();
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::B))
-			lineB.keyPressed();
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::H))
-			lineH.keyPressed();
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::U))
-			lineU.keyPressed();
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::I))
-			lineI.keyPressed();
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::L))
-			lineL.keyPressed();
 
+
+
+		//Reperage des placements d'objets
+		if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
+			cout << sf::Mouse::getPosition(window).x << " , " << sf::Mouse::getPosition(window).y << endl;
+
+		//A supprimer
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::P))
 		{
 			lineB.newBlock();
@@ -96,6 +139,9 @@ int main()
 			lineZ.newBlock();
 		}
 
+		//All updates
+		hud.extremFeverUptade();
+		hud.scoreUptade();
 		lineB.update();
 		lineE.update();
 		lineF.update();
@@ -109,8 +155,21 @@ int main()
 
 		window.clear();
 
-		//testWrite.write();
-		window.draw(bg);
+		//Writer
+		//writeQ.write();
+		//writeZ.write();
+		//writeE.write();
+		//writeF.write();
+		//writeV.write();
+		//writeB.write();
+		//writeH.write();
+		//writeU.write();
+		//writeI.write();
+		//writeL.write();
+
+		//All draw
+		hud.draw();
+		hud.extremFeverDraw();
 		lineL.drawBg();
 		lineF.drawBg();
 		lineB.drawBg();
@@ -135,6 +194,17 @@ int main()
 
 		window.display();
 	}
+
+	//writeQ.end();
+	//writeZ.end();
+	//writeE.end();
+	//writeF.end();
+	//writeV.end();
+	//writeB.end();
+	//writeH.end();
+	//writeU.end();
+	//writeI.end();
+	//writeL.end();
 
 	return 0;
 }

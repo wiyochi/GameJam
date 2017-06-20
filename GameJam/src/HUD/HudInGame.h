@@ -15,6 +15,8 @@ public:
 	void extremFeverUptade();
 	void extremFeverDraw();
 	void scoreUptade();
+	void raiseScore();
+	void resetScore();
 	void keyReleased();
 	void animationScoreUptade();
 
@@ -35,4 +37,8 @@ private:
 	bool ifLimitScaleScore;
 	sf::Vector2f limitScaleScore;
 	bool animationScore;
+
+
+	sf::Texture bgTexture;
+	sf::Sprite bg;
 };
